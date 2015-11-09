@@ -46,6 +46,7 @@ public class EventManager {
     @Asynchronous
     public void handleAddEvent(@Observes @AddModel final MyModel model) throws InterruptedException {
 	// This is a very time consuming task ;)
+	System.out.printf("Adding model: %s...\n", model.getValue());
 	Thread.sleep(3000);
 	System.out.printf("Added model: %s\n", model.getValue());
     }
@@ -61,6 +62,7 @@ public class EventManager {
     @Asynchronous
     public void handleDeleteEvent(@Observes @DeleteModel final MyModel model) throws InterruptedException {
 	// This is a very time consuming task ;)
+	System.out.printf("Deleting model %s...%n", model.getValue());
 	Thread.sleep(3000);
 	System.out.printf("Deleted model: %s\n", model.getValue());
     }
